@@ -172,6 +172,18 @@ public class Mini_Twitter extends JFrame {
 		treePanel = new DynamicTree();
 		treePanel.setBounds(10, 10, 320, 550);
 		contentPane.add(treePanel);
+		
+		JButton Validation_Button = new JButton("Validate");
+		Validation_Button.setBounds(340, 389, 484, 50);
+		Validation_Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				Validation_Button.setText("Validate: Valid");
+			}
+		});
+		contentPane.add(Validation_Button);
+		
+		
 	}
 }
 

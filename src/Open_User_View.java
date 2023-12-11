@@ -10,6 +10,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JList;
 import java.awt.Color;
+import javax.swing.JLabel;
 
 public class Open_User_View extends JFrame {
 
@@ -39,7 +40,7 @@ public class Open_User_View extends JFrame {
 	public Open_User_View() {
 		setTitle("User_ID");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 375);
 		User_Display = new JPanel();
 		User_Display.setBackground(new Color(40, 43, 48));
 		User_Display.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -83,6 +84,11 @@ public class Open_User_View extends JFrame {
 		UV_PostMessage.setBounds(10, 135, 199, 40);
 		User_Display.add(UV_PostMessage);
 		
+		JLabel Update_Time = new JLabel("Update Time: " + System.currentTimeMillis());
+		Update_Time.setForeground(Color.WHITE);
+		Update_Time.setBackground(Color.WHITE);
+		Update_Time.setBounds(10, 294, 414, 31);
+		User_Display.add(Update_Time);
 		
 		JButton UV_Post = new JButton("Post Tweet");
 		UV_Post.setBackground(new Color(202, 178, 251));
@@ -90,7 +96,7 @@ public class Open_User_View extends JFrame {
 			public void actionPerformed(ActionEvent e) 
 			{
 				Message_Total++;
-				
+				Update_Time.setText("Update Time: "+ System.currentTimeMillis());
 				
 			}	
 		});
@@ -102,6 +108,14 @@ public class Open_User_View extends JFrame {
 		model2.addElement("News Feed:");
 		UV_NewsFeed.setBounds(10, 186, 414, 63);
 		User_Display.add(UV_NewsFeed);
+		
+		JLabel Creation_Time = new JLabel("Creation Time: " + System.currentTimeMillis());
+		Creation_Time.setBackground(new Color(255, 255, 255));
+		Creation_Time.setForeground(new Color(255, 255, 255));
+		Creation_Time.setBounds(10, 272, 414, 31);
+		User_Display.add(Creation_Time);
+		
+		
 	}
 
 
